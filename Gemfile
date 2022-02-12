@@ -31,14 +31,15 @@ group :development do
 end
 
 group :development, :test do
-  # default gems (here still unused) to (also) be used be the Engines
+  gem "rspec-rails", "~> 5.1" # rails wrapper for test framework: https://github.com/rspec/rspec-rails
+
   # gem "amazing_print" # pretty printing in the console: https://github.com/amazing-print/amazing_print
+  # default gems (here still unused) to (also) be used be the Engines
   # gem "bundler-audit" # scanning dependencies for known CVEs: https://github.com/rubysec/bundler-audit
   # gem "capybara" # simulate browsing websites: https://github.com/teamcapybara/capybara
   # gem "debug", platforms: %i(mri mingw x64_mingw) # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   # gem "factory_bot" # avoid fixtures: https://github.com/thoughtbot/factory_bot
   # gem "faker" # generate fake data: https://github.com/faker-ruby/faker
-  # gem "rspec-rails" # test framework: https://github.com/rspec/rspec-rails
   # gem "rswag-specs" # test OpenAPI documentation against API: https://github.com/rswag/rswag
   # gem "rubocop" # code linter: https://github.com/rubocop/rubocop
   # gem "rubocop-performance" # plugin: https://github.com/rubocop/rubocop-performance
