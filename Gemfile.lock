@@ -114,6 +114,7 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.1-x86_64-darwin)
       racc (~> 1.4)
+    oj (3.13.11)
     parallel (1.21.0)
     parser (3.1.0.0)
       ast (~> 2.4.1)
@@ -223,6 +224,7 @@ PLATFORMS
 DEPENDENCIES
   amazing_print (~> 1.4)
   bundler-audit (~> 0.9)
+  oj (~> 3.13)
   pg (~> 1.1)
   propshaft
   puma (~> 5.0)

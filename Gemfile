@@ -6,6 +6,7 @@ ruby "3.1.0"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.2", ">= 7.0.2.2"
 
+gem "oj", "~> 3.13" # fast JSON parser: https://github.com/ohler55/oj
 gem "pg", "~> 1.1" # Use postgresql as the database for Active Record
 gem "propshaft" # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "puma", "~> 5.0" # Use the Puma web server [https://github.com/puma/puma]
@@ -17,7 +18,6 @@ gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby) # Windows does not
 # gem "devise" # all frills authentication solution: https://github.com/heartcombo/devise
 # gem "dry-schema" # parameter validation: https://github.com/dry-rb/dry-schema
 # gem "jsonapi-serializer" # fast JSON:API serialization with clear interface: https://github.com/jsonapi-serializer/jsonapi-serializer
-# gem "oj" # fast JSON parser: https://github.com/ohler55/oj
 # gem "pagy" # pagynation with a flexible plugin system: https://ddnexus.github.io/pagy/
 # gem "pundit" # pure ruby authorization solution: https://github.com/varvet/pundit
 # gem "sidekiq" # background processing / job queueing: https://github.com/mperham/sidekiq
