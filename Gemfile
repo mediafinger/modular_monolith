@@ -32,6 +32,7 @@ end
 
 group :development, :test do
   gem "amazing_print", "~> 1.4" # pretty printing in the console: https://github.com/amazing-print/amazing_print
+  gem "bundler-audit", "~> 0.9" # scanning dependencies for known CVEs: https://github.com/rubysec/bundler-audit
   gem "rspec-rails", "~> 5.1" # rails wrapper for test framework: https://github.com/rspec/rspec-rails
   gem "rubocop", "~> 1.25" # code linter: https://github.com/rubocop/rubocop
   gem "rubocop-performance" # plugin: https://github.com/rubocop/rubocop-performance
@@ -40,7 +41,6 @@ group :development, :test do
   gem "rubocop-rspec" # plugin: https://github.com/rubocop/rubocop-rspec
 
   # default gems (here still unused) to (also) be used be the Engines
-  # gem "bundler-audit" # scanning dependencies for known CVEs: https://github.com/rubysec/bundler-audit
   # gem "capybara" # simulate browsing websites: https://github.com/teamcapybara/capybara
   # gem "debug", platforms: %i(mri mingw x64_mingw) # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   # gem "factory_bot" # avoid fixtures: https://github.com/thoughtbot/factory_bot
