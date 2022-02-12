@@ -6,25 +6,47 @@ ruby "3.1.0"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.2", ">= 7.0.2.2"
 
-# The modern asset pipeline for Rails [https://github.com/rails/propshaft]
-gem "propshaft"
+gem "pg", "~> 1.1" # Use postgresql as the database for Active Record
+gem "propshaft" # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
+gem "puma", "~> 5.0" # Use the Puma web server [https://github.com/puma/puma]
+gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby) # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 
-# Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
+# default gems (here still unused) to (also) be used be the Engines
+# gem "chimera_http_client" # flexible http-client with a nice interface, wraps libcurl: https://github.com/mediafinger/chimera_http_client
+# gem "devise" # all frills authentication solution: https://github.com/heartcombo/devise
+# gem "dry-schema" # parameter validation: https://github.com/dry-rb/dry-schema
+# gem "jsonapi-serializer" # fast JSON:API serialization with clear interface: https://github.com/jsonapi-serializer/jsonapi-serializer
+# gem "oj" # fast JSON parser: https://github.com/ohler55/oj
+# gem "pagy" # pagynation with a flexible plugin system: https://ddnexus.github.io/pagy/
+# gem "pundit" # pure ruby authorization solution: https://github.com/varvet/pundit
+# gem "sidekiq" # background processing / job queueing: https://github.com/mperham/sidekiq
+# gem "rswag-api" # generate OpenAPI documentation: https://github.com/rswag/rswag
+# gem "rswag-ui" # provide interactive OpenAPI UI: https://github.com/rswag/rswag
+# gem "strong_migrations" # detect unsafe migrations: https://github.com/ankane/strong_migrations
 
-# Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 5.0"
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
-
-group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
-end
+# internal engines
+# gem "..._engine", path: "engines/..._engine"
 
 group :development do
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
 end
 
+group :development, :test do
+  # default gems (here still unused) to (also) be used be the Engines
+  # gem "amazing_print" # pretty printing in the console: https://github.com/amazing-print/amazing_print
+  # gem "bundler-audit" # scanning dependencies for known CVEs: https://github.com/rubysec/bundler-audit
+  # gem "capybara" # simulate browsing websites: https://github.com/teamcapybara/capybara
+  # gem "debug", platforms: %i(mri mingw x64_mingw) # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  # gem "factory_bot" # avoid fixtures: https://github.com/thoughtbot/factory_bot
+  # gem "faker" # generate fake data: https://github.com/faker-ruby/faker
+  # gem "rspec-rails" # test framework: https://github.com/rspec/rspec-rails
+  # gem "rswag-specs" # test OpenAPI documentation against API: https://github.com/rswag/rswag
+  # gem "rubocop" # code linter: https://github.com/rubocop/rubocop
+  # gem "rubocop-performance" # plugin: https://github.com/rubocop/rubocop-performance
+  # gem "rubocop-rails" # plugin: https://github.com/rubocop/rubocop-rails
+  # gem "rubocop-rake" # plugin: https://github.com/rubocop/rubocop-rake
+  # gem "rubocop-rspec" # plugin: https://github.com/rubocop/rubocop-rspec
+  # gem "webmock" # stub HTTP requests: https://github.com/bblimke/webmock
+end
+
+group :test do
+end
