@@ -28,6 +28,7 @@ gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby) # Windows does not
 # gem "..._engine", path: "engines/..._engine"
 
 group :development do
+  # tdb
 end
 
 group :development, :test do
@@ -46,8 +47,8 @@ group :development, :test do
   # gem "factory_bot" # avoid fixtures: https://github.com/thoughtbot/factory_bot
   # gem "faker" # generate fake data: https://github.com/faker-ruby/faker
   # gem "rswag-specs" # test OpenAPI documentation against API: https://github.com/rswag/rswag
-  # gem "webmock" # stub HTTP requests: https://github.com/bblimke/webmock
 end
 
 group :test do
+  gem "webmock", "~> 3.14" # stub HTTP requests: https://github.com/bblimke/webmock
 end
