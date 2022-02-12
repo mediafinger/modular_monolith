@@ -31,9 +31,9 @@ group :development do
 end
 
 group :development, :test do
+  gem "amazing_print", "~> 1.4" # pretty printing in the console: https://github.com/amazing-print/amazing_print
   gem "rspec-rails", "~> 5.1" # rails wrapper for test framework: https://github.com/rspec/rspec-rails
 
-  # gem "amazing_print" # pretty printing in the console: https://github.com/amazing-print/amazing_print
   # default gems (here still unused) to (also) be used be the Engines
   # gem "bundler-audit" # scanning dependencies for known CVEs: https://github.com/rubysec/bundler-audit
   # gem "capybara" # simulate browsing websites: https://github.com/teamcapybara/capybara

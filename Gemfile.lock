@@ -66,6 +66,7 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    amazing_print (1.4.0)
     builder (3.2.4)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
@@ -174,6 +175,7 @@ PLATFORMS
   x86_64-darwin-18
 
 DEPENDENCIES
+  amazing_print (~> 1.4)
   pg (~> 1.1)
   propshaft
   puma (~> 5.0)
