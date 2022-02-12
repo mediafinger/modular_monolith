@@ -33,6 +33,11 @@ end
 group :development, :test do
   gem "amazing_print", "~> 1.4" # pretty printing in the console: https://github.com/amazing-print/amazing_print
   gem "rspec-rails", "~> 5.1" # rails wrapper for test framework: https://github.com/rspec/rspec-rails
+  gem "rubocop", "~> 1.25" # code linter: https://github.com/rubocop/rubocop
+  gem "rubocop-performance" # plugin: https://github.com/rubocop/rubocop-performance
+  gem "rubocop-rails" # plugin: https://github.com/rubocop/rubocop-rails
+  gem "rubocop-rake" # plugin: https://github.com/rubocop/rubocop-rake
+  gem "rubocop-rspec" # plugin: https://github.com/rubocop/rubocop-rspec
 
   # default gems (here still unused) to (also) be used be the Engines
   # gem "bundler-audit" # scanning dependencies for known CVEs: https://github.com/rubysec/bundler-audit
@@ -41,11 +46,6 @@ group :development, :test do
   # gem "factory_bot" # avoid fixtures: https://github.com/thoughtbot/factory_bot
   # gem "faker" # generate fake data: https://github.com/faker-ruby/faker
   # gem "rswag-specs" # test OpenAPI documentation against API: https://github.com/rswag/rswag
-  # gem "rubocop" # code linter: https://github.com/rubocop/rubocop
-  # gem "rubocop-performance" # plugin: https://github.com/rubocop/rubocop-performance
-  # gem "rubocop-rails" # plugin: https://github.com/rubocop/rubocop-rails
-  # gem "rubocop-rake" # plugin: https://github.com/rubocop/rubocop-rake
-  # gem "rubocop-rspec" # plugin: https://github.com/rubocop/rubocop-rspec
   # gem "webmock" # stub HTTP requests: https://github.com/bblimke/webmock
 end
 
