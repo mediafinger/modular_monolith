@@ -9,6 +9,7 @@ gem "rails", "~> 7.0.2", ">= 7.0.2.2"
 gem "pg", "~> 1.1" # Use postgresql as the database for Active Record
 gem "propshaft" # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "puma", "~> 5.0" # Use the Puma web server [https://github.com/puma/puma]
+gem "strong_migrations", "~> 0.8" # detect unsafe migrations: https://github.com/ankane/strong_migrations
 gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby) # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 
 # default gems (here still unused) to (also) be used be the Engines
@@ -22,7 +23,6 @@ gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby) # Windows does not
 # gem "sidekiq" # background processing / job queueing: https://github.com/mperham/sidekiq
 # gem "rswag-api" # generate OpenAPI documentation: https://github.com/rswag/rswag
 # gem "rswag-ui" # provide interactive OpenAPI UI: https://github.com/rswag/rswag
-# gem "strong_migrations" # detect unsafe migrations: https://github.com/ankane/strong_migrations
 
 # internal engines
 # gem "..._engine", path: "engines/..._engine"

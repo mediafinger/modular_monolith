@@ -31,3 +31,14 @@ if %w(development test).include? Rails.env
 
   task default: :ci
 end
+
+desc "Only dump the schema when adding a new migration"
+task faster_migrations: :environment do
+  ActiveRecord.dump_schema_after_migration = Rails.env.development? && `git status db/migrate/ --porcelain`.present?
+end
+
+desc "Prepend faster_migrations task before db:migrate"
+task "db:migrate": "faster_migrations"
+
+desc "Keep DB columns in schema.db sorted"
+task "db:schema:dump": "strong_migrations:alphabetize_columns"
