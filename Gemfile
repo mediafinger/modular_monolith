@@ -10,6 +10,8 @@ gem "oj", "~> 3.13" # fast JSON parser: https://github.com/ohler55/oj
 gem "pg", "~> 1.1" # Use postgresql as the database for Active Record
 gem "propshaft" # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "puma", "~> 5.0" # Use the Puma web server [https://github.com/puma/puma]
+gem "rack-requestid", "~> 0.2" # set a request_id in the middleware: https://github.com/dancavallaro/rack-requestid
+gem "rack-timeout", "~> 0.6", require: "rack/timeout/base" # set a custom timeout in the middleware: https://github.com/sharpstone/rack-timeout
 gem "strong_migrations", "~> 0.8" # detect unsafe migrations: https://github.com/ankane/strong_migrations
 gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby) # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 

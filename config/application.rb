@@ -69,5 +69,21 @@ module App
       # g.factory_bot suffix: "factory"
       g.system_tests = nil
     end
+
+    # Rack::RequestID ensures that every request has HTTP_X_REQUEST_ID set
+    # It needs to reside in the callchain before ActionDispatch::RequestId
+    # ActionDispatch::RequestId creates a request_id or uses HTTP_X_REQUEST_ID
+    # but it will not change the request header (only sets the response header)
+    config.middleware.insert_before(
+      ActionDispatch::RequestId,
+      ::Rack::RequestID, include_response_header: true, overwrite: false
+    )
+
+    # set rack-timeout
+    config.middleware.insert_after(
+      ActionDispatch::RequestId,
+      Rack::Timeout, service_timeout: Settings.rack_timeout.to_i
+    )
+    Rack::Timeout::Logger.disable # we only log the errors, not the verbose status messages
   end
 end

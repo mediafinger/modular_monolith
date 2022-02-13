@@ -98,7 +98,7 @@ class Settings
   register :log_target, default: Settings.is?(:environment, :development) ? "log/#{Settings.environment}.log" : $stdout
 
   # rack-timeout in seconds
-  register :rack_timeout, default: 10
+  register :rack_timeout, default: 12
 
   # Don't add secrets as 'default' values here!
   # Either set ENV vars for secrets
