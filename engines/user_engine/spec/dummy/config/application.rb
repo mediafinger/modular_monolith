@@ -1,5 +1,8 @@
 require_relative "boot"
 
+# Make ENV variables available before
+require_relative "settings"
+
 require "rails"
 # Pick the frameworks you want:
 require "active_model/railtie"
