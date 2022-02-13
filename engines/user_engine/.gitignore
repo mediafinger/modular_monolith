@@ -9,6 +9,7 @@
 
 # Ignore the lock file of the Engine
 Gemfile.lock
+!spec/dummy/Gemfile.lock
 
 /node_modules
 /yarn-error.log

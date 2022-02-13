@@ -8,7 +8,7 @@ require File.expand_path("dummy/config/environment", __dir__)
 require "rspec/rails"
 # Add additional requires below this line. Rails is not loaded until this point!
 
-require "activerecord/postgres_enum"
+# require "activerecord/postgres_enum"
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -28,6 +28,10 @@ require "activerecord/postgres_enum"
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
 begin
+  require_relative "../spec/dummy/config/environment"
+  ActiveRecord::Migrator.migrations_paths = [File.expand_path("../spec/dummy/db/migrate", __dir__)]
+  ActiveRecord::Migrator.migrations_paths << File.expand_path("../db/migrate", __dir__)
+  `bundle exec rails db:migrate RAILS_ENV=test`
   ActiveRecord::Migration.maintain_test_schema!
 rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
