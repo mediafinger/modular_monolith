@@ -16,6 +16,7 @@ gem "strong_migrations", "~> 0.8" # detect unsafe migrations: https://github.com
 gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby) # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 
 # default gems (here still unused) to (also) be used be the Engines
+# gem "activerecord-postgres_enum", "~> 2.0" # migration and schema.rb support for PostgreSQL enums: https://github.com/bibendi/activerecord-postgres_enum
 # gem "chimera_http_client" # flexible http-client with a nice interface, wraps libcurl: https://github.com/mediafinger/chimera_http_client
 # gem "devise" # all frills authentication solution: https://github.com/heartcombo/devise
 # gem "dry-schema" # parameter validation: https://github.com/dry-rb/dry-schema
@@ -27,7 +28,7 @@ gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby) # Windows does not
 # gem "rswag-ui" # provide interactive OpenAPI UI: https://github.com/rswag/rswag
 
 # internal engines
-# gem "..._engine", path: "engines/..._engine"
+gem "user_engine", path: "engines/user_engine"
 
 group :development do
   # tdb

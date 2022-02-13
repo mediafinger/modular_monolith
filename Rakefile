@@ -32,6 +32,13 @@ if %w(development test).include? Rails.env
   task default: :ci
 end
 
+desc "Run whole test suite of user_engine"
+task user_engine_specs: :environment do
+  Dir.chdir("engines/user_engine/") do
+    sh "bundle exec rake rspec"
+  end
+end
+
 desc "Only dump the schema when adding a new migration"
 task faster_migrations: :environment do
   ActiveRecord.dump_schema_after_migration = Rails.env.development? && `git status db/migrate/ --porcelain`.present?
