@@ -1,3 +1,10 @@
+PATH
+  remote: engines/user_engine
+  specs:
+    user_engine (0.1.0)
+      pg
+      rails (~> 7.0.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -243,6 +250,7 @@ DEPENDENCIES
   rubocop-rspec
   strong_migrations (~> 0.8)
   tzinfo-data
+  user_engine!
   webmock (~> 3.14)
 
 RUBY VERSION
