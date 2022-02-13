@@ -87,6 +87,7 @@ class Settings
 
   register :rails_max_threads, default: 5, mandatory: true
   register :rails_serve_static_files, default: false
+  register :secret_key_base, mandatory: true
 
   # Error pages, must only be used in development
   register :display_rails_error_page, default: false

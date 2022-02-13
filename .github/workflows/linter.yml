@@ -1,0 +1,57 @@
+name: CI-linter
+
+on: workflow_call
+
+jobs:
+# -----------------------------BEGINNING OF SETUP-RUBY----------------------------
+  setup-ruby:
+    name: Setup Ruby
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout moduolar_monolith
+        uses: actions/checkout@v2
+      - name: Setup Ruby and install gems
+        uses: ruby/setup-ruby@v1
+        env:
+          # BUNDLE_GITHUB__COM: x-access-token:${{ secrets.REPO_SCOPED_TOKEN }}
+          BUNDLE_WITH: development:test
+          BUNDLE_WITHOUT: staging:production
+        with:
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          cache-version: 1 # increment this number when you have to empty the cache manually
+# ----------------END OF SETUP-RUBY-----------------------------------------------
+
+# -----------------------------BEGINNING OF LINT ----------------------------
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    needs: [ setup-ruby ]
+    continue-on-error: false
+
+    steps:
+      - name: Checkout moduolar_monolith
+        uses: actions/checkout@v2
+
+      - name: Set bin/ files permissions to executable
+        run: |
+          chmod +x bin/*
+
+      - name: Setup Ruby and install gems
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          cache-version: 1
+
+# --- till here it was only Ruby Setup, now the linters are executed:
+
+      # Lint the code
+      - name: Rubocop
+        run: |
+          bin/rubocop
+
+      # Check dependencies for known CVE
+      - name: Bundle Audit
+        run: |
+          bin/bundle-audit
+
+# ----------------END OF LINT----------------------------------------------
