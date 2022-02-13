@@ -28,11 +28,11 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "rails", "~> 7.0.2"
 
-  spec.add_dependency "activerecord-postgres_enum", "~> 2.0"
-
-  spec.add_dependency "oj" # , "~> 3.13" # fast JSON parser: https://github.com/ohler55/oj
   spec.add_dependency "pg" # , "~> 1.1" # Use postgresql as the database for Active Record
-  spec.add_dependency "propshaft" # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
+
+  # spec.add_dependency "activerecord-postgres_enum", "~> 2.0"
+  # spec.add_dependency "oj" # , "~> 3.13" # fast JSON parser: https://github.com/ohler55/oj
+  # spec.add_dependency "propshaft" # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 
   spec.add_development_dependency "amazing_print", "~> 1.4" # pretty printing in the console: https://github.com/amazing-print/amazing_print
   spec.add_development_dependency "bundler-audit", "~> 0.9" # scanning dependencies for known CVEs: https://github.com/rubysec/bundler-audit

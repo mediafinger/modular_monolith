@@ -1,0 +1,23 @@
+name: CI-user-engine-specs
+
+on:
+  push:
+    branches:
+    - main
+    # only run when files in this directory have changed
+    paths:
+    - 'engines/user_engine/**'
+  pull_request:
+    branches:
+    - main
+    # only run when files in this directory have changed
+    paths:
+    - 'engines/user_engine/**'
+
+defaults:
+  run:
+    working-directory: engines/user_engine # the directory to run console commands in
+
+jobs:
+  user_engine:
+    uses: mediafinger/modular_monolith/.github/workflows/engine_specs.yml@user-engine
