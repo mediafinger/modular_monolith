@@ -12,6 +12,7 @@ AllCops:
     - bin/**
     - config.ru
     - db/schema.rb
+    - engines/*/spec/dummy/db/schema.rb
     - node_modules/**/*
     - tmp/**/*
     - vendor/**/*
