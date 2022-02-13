@@ -1,0 +1,40 @@
+# Engine specific setup
+
+require "bundler/setup"
+
+APP_RAKEFILE = File.expand_path("spec/dummy/Rakefile", __dir__)
+load "rails/tasks/engine.rake"
+load "rails/tasks/statistics.rake"
+
+require "bundler/gem_tasks"
+
+# Load the Dummy application.
+require_relative "spec/dummy/config/application"
+
+Rails.application.load_tasks
+
+# # For normal rails logging within rake tasks
+Rails.logger = Logger.new($stdout)
+Rails.application.configure { config.log_level = :warn }
+
+if %w(development test).include? Rails.env
+  require "bundler/audit/task"
+  require "rspec/core/rake_task"
+  require "rubocop/rake_task"
+
+  # setup task bundle:audit
+  Bundler::Audit::Task.new
+
+  # setup task rspec
+  RSpec::Core::RakeTask.new(:rspec) do |t|
+    # t.exclude_pattern = "**/{system}/**/*_spec.rb" # example, here how to skip integration specs
+  end
+
+  # setup taks rubocop and rubocop:auto_correct
+  RuboCop::RakeTask.new
+
+  desc "Run rubocop and the specs"
+  task ci: %w(rubocop rspec bundle:audit)
+
+  task default: :ci
+end
