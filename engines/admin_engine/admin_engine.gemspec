@@ -26,11 +26,12 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = ">= 3.1"
 
+  # change dependency from rails to the engines actually used?!
   spec.add_dependency "rails", "~> 7.0.2"
 
-  spec.add_dependency "pg" # , "~> 1.1" # Use postgresql as the database for Active Record
+  spec.add_dependency "activerecord-postgres_enum", "~> 2.0" # migration and schema.rb support for PostgreSQL enums: https://github.com/bibendi/activerecord-postgres_enum
+  spec.add_dependency "pg", "~> 1.1" # Use postgresql as the database for Active Record
 
-  # spec.add_dependency "activerecord-postgres_enum", "~> 2.0"
   # spec.add_dependency "oj" # , "~> 3.13" # fast JSON parser: https://github.com/ohler55/oj
   # spec.add_dependency "propshaft" # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 
