@@ -1,0 +1,32 @@
+# For more info read https://guides.rubyonrails.org/configuring.html#configuring-a-database
+# To create additional roles in postgres see `$ createuser --help`.
+# For details on connection pooling: https://guides.rubyonrails.org/configuring.html#database-pooling
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= Settings.rails_max_threads %>
+  database: <%= "#{Settings.app_db_name}" %>
+  host: <%= Settings.app_db_host %>
+  port: <%= Settings.app_db_port %>
+  username: <%= Settings.app_db_username %>
+  password: <%= Settings.app_db_password %>
+  reconnect: true
+  connect_timeout: 5 # seconds
+  timeout: 5000 # milliseconds
+  variables:
+    statement_timeout: 15s # seconds
+    lock_timeout: 10s # seconds
+  # socket: /tmp/postgres.sock
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+staging:
+  <<: *default
+
+production:
+  <<: *default
