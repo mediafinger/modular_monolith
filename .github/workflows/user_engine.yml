@@ -20,4 +20,4 @@ defaults:
 
 jobs:
   user_engine:
-    uses: mediafinger/modular_monolith/.github/workflows/engine_specs.yml@user-engine
+    uses: mediafinger/modular_monolith/.github/workflows/engine_specs.yml@main
