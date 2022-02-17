@@ -104,6 +104,10 @@ Style/FrozenStringLiteralComment:
 Style/FormatString:
   EnforcedStyle: sprintf
 
+Style/FormatStringToken:
+  IgnoredMethods:
+    - validates
+
 Style/HashSyntax:
   EnforcedShorthandSyntax: either
 
