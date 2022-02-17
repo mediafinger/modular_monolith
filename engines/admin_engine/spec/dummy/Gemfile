@@ -1,0 +1,7 @@
+# admin_engine
+
+source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+# Specify your gem's dependencies in admin_engine.gemspec.
+gemspec path: "../.." # to admin_engine.gemspec

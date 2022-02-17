@@ -1,0 +1,27 @@
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore temporary spec helper files
+/spec/examples.txt
+
+# Ignore the lock file of the Engine
+Gemfile.lock
+!spec/dummy/Gemfile.lock
+
+/node_modules
+/yarn-error.log
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+/public/assets
+.byebug_history
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
