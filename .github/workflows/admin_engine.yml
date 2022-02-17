@@ -1,0 +1,23 @@
+name: CI-admin-engine-specs
+
+on:
+  push:
+    branches:
+    - main
+    # only run when files in this directory have changed
+    paths:
+    - 'engines/admin_engine/**'
+  pull_request:
+    branches:
+    - main
+    # only run when files in this directory have changed
+    paths:
+    - 'engines/admin_engine/**'
+
+defaults:
+  run:
+    working-directory: engines/admin_engine # the directory to run console commands in
+
+jobs:
+  admin_engine:
+    uses: mediafinger/modular_monolith/.github/workflows/engine_specs.yml@main

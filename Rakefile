@@ -32,6 +32,13 @@ if %w(development test).include? Rails.env
   task default: :ci
 end
 
+desc "Run whole test suite of admin_engine"
+task admin_engine_specs: :environment do
+  Dir.chdir("engines/admin_engine/") do
+    sh "bundle exec rake rspec"
+  end
+end
+
 desc "Run whole test suite of user_engine"
 task user_engine_specs: :environment do
   Dir.chdir("engines/user_engine/") do
