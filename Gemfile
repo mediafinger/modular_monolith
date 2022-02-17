@@ -28,6 +28,7 @@ gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby) # Windows does not
 # gem "rswag-ui" # provide interactive OpenAPI UI: https://github.com/rswag/rswag
 
 # internal engines
+gem "admin_engine", path: "engines/admin_engine"
 gem "user_engine", path: "engines/user_engine"
 
 group :development do
